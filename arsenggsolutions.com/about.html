@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS Engineering Solutions - HVAC Services in Bangalore</title>
+    <meta name="description" content="Professional HVAC services in Bangalore. We provide HVAC design, installation, maintenance, and repair services for commercial and residential projects.">
+    <meta name="keywords" content="HVAC, air conditioning, Bangalore, engineering, maintenance, installation">
+    
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-900': '#2E375F', /* Primary Color */
+                        'red-600': '#F22613',  /* Secondary/Accent Color */
+                        'blue-100': '#E6E8F0', /* Light shade for icon backgrounds */
+                        'blue-800': '#273153', /* Darker blue for hover/mobile menu */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    
+    <style>
+        .vanta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.95;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Service Card Flip Effect */
+        .service-card { perspective: 1000px; }
+        .service-card-inner { transition: transform 0.6s; transform-style: preserve-3d; }
+        .service-card:hover .service-card-inner { transform: rotateY(180deg); }
+        .service-card-front, .service-card-back { backface-visibility: hidden; position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+        .service-card-back { transform: rotateY(180deg); }
+        
+        /* Floating Animation */
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        
+        /* Entrance Animation (Controlled by JS) */
+        .slide-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .slide-up.animate { opacity: 1; transform: translateY(0); }
+        
+        /* Experts Carousel Styles */
+        #experts-track { transition: transform 0.7s ease-in-out; }
+        .expert-card-match { width: 16.6666%; } /* w-1/6 for 6 visible cards */
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <div class="bg-red-600 text-white py-2">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <p class="font-bold text-sm">Don't wait any longer to get it fixed! 🛠️</p>
+                <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="message-circle" class="mr-2 w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <header class="bg-white py-4 shadow-md">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="mb-4 md:mb-0">
+                    <img src="images/logo.png" alt="ARS Engineering Solutions" class="h-14">
+                </a>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center md:text-right">
+                    <div class="flex items-center justify-center sm:justify-end space-x-2">
+                        <i data-feather="mail" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-500">Mail Us Today</p>
+                            <a href="mailto:sales@arsenggsolutions.com" class="text-sm font-medium hover:text-blue-900 transition">sales@arsenggsolutions.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center sm:justify-end space-x-2">
+                        <i data-feather="map-pin" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-500">Location</p>
+                            <p class="text-sm">Rajaji Nagar, Bangalore</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center sm:justify-end space-x-2">
+                        <i data-feather="phone" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-500">Call Us</p>
+                            <a href="tel:+919035994326" class="text-sm font-medium hover:text-blue-900 transition">+91 9035994326</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex justify-between items-center py-3">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-medium hover:text-red-600 transition">Home</a>
+                    <a href="about.html" class="font-medium hover:text-red-600 transition">About Us</a>
+                    <div class="relative group">
+                        <button class="font-medium hover:text-red-600 transition flex items-center py-2">
+                            Services <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-64 bg-white text-gray-800 shadow-xl rounded-b-lg py-2 hidden group-hover:block z-50">
+                            <a href="services.html" class="block px-4 py-2 hover:bg-blue-100 font-bold text-blue-900">All Services</a>
+                            <a href="project-sales-and-estimation.html" class="block px-4 py-2 hover:bg-blue-100">Project Sales & Estimation</a>
+                            <a href="hvac-design-and-drafting.html" class="block px-4 py-2 hover:bg-blue-100">HVAC Design & Drafting</a>
+                            <a href="project-planning-and-project-execution-project-management.html" class="block px-4 py-2 hover:bg-blue-100">Project Management</a>
+                            <a href="preventive-maintenance-services.html" class="block px-4 py-2 hover:bg-blue-100">Preventive Maintenance</a>
+                            <a href="annual-maintenance-of-hvac-equipment.html" class="block px-4 py-2 hover:bg-blue-100">Annual Maintenance</a>
+                            <a href="retro-fit-and-refurbishment-projects.html" class="block px-4 py-2 hover:bg-blue-100">Retro Fit Projects</a>
+                            <a href="indoor-air-quality-monitoring.html" class="block px-4 py-2 hover:bg-blue-100">Air Quality Monitoring</a>
+                            <a href="duct-inspection-and-cleaning-services.html" class="block px-4 py-2 hover:bg-blue-100">Duct Inspection</a>
+                        </div>
+                    </div>
+                    <a href="projects.html" class="font-medium hover:text-red-600 transition">Projects</a>
+                    <a href="project-gallery.html" class="font-medium hover:text-red-600 transition">Gallery</a>
+                    <a href="our-clients.html" class="font-medium hover:text-red-600 transition">Our Clients</a>
+                    <a href="contact.html" class="font-medium hover:text-red-600 transition">Contact</a>
+                </div>
+                
+                <a href="enquire-now.html" class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg font-bold shadow-lg transition duration-300">
+                    Enquire Now
+                </a>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-blue-800 pb-2 transition-all duration-300">
+            <a href="index.html" class="block py-2 px-6 hover:bg-blue-900">Home</a>
+            <a href="about.html" class="block py-2 px-6 hover:bg-blue-900">About Us</a>
+            <div>
+                <button class="w-full text-left py-2 px-6 hover:bg-blue-900 flex justify-between items-center" id="services-mobile-toggle">
+                    Services <i data-feather="chevron-down" class="w-4 h-4 ml-2 transition-transform duration-300" id="services-mobile-icon"></i>
+                </button>
+                <div id="services-mobile-menu" class="hidden bg-blue-900 pl-8">
+                    <a href="services.html" class="block py-2 hover:bg-blue-800 text-red-600 font-bold">All Services</a>
+                    <a href="project-sales-and-estimation.html" class="block py-2 hover:bg-blue-800">Project Sales & Estimation</a>
+                    <a href="hvac-design-and-drafting.html" class="block py-2 hover:bg-blue-800">HVAC Design & Drafting</a>
+                    <a href="project-planning-and-project-execution-project-management.html" class="block py-2 hover:bg-blue-800">Project Management</a>
+                    <a href="preventive-maintenance-services.html" class="block py-2 hover:bg-blue-800">Preventive Maintenance</a>
+                    <a href="annual-maintenance-of-hvac-equipment.html" class="block py-2 hover:bg-blue-800">Annual Maintenance</a>
+                    <a href="retro-fit-and-refurbishment-projects.html" class="block py-2 hover:bg-blue-800">Retro Fit Projects</a>
+                    <a href="indoor-air-quality-monitoring.html" class="block py-2 hover:bg-blue-800">Air Quality Monitoring</a>
+                    <a href="duct-inspection-and-cleaning-services.html" class="block py-2 hover:bg-blue-800">Duct Inspection</a>
+                </div>
+            </div>
+            <a href="projects.html" class="block py-2 px-6 hover:bg-blue-900">Projects</a>
+            <a href="project-gallery.html" class="block py-2 px-6 hover:bg-blue-900">Gallery</a>
+            <a href="our-clients.html" class="block py-2 px-6 hover:bg-blue-900">Our Clients</a>
+            <a href="contact.html" class="block py-2 px-6 hover:bg-blue-900">Contact</a>
+            <a href="enquire-now.html" class="block bg-red-600 hover:bg-red-700 text-white px-6 py-3 mx-6 my-4 rounded-lg text-center font-bold">Enquire Now</a>
+        </div>
+    </nav>
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
+            <h1 class="text-3xl text-gray-500">About Us</h1>
+           
+        </div>
+    </section> 
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="order-2 lg:order-1">
+                <h2 class="text-4xl font-extrabold text-blue-900 mb-4 slide-up">Welcome to <span class="text-red-600">ARS Engineering Solutions</span></h2>
+                <p class="lead text-lg mb-6 text-gray-700 slide-up" style="transition-delay: 0.1s;">
+                    We started with humble beginnings in Bangalore and are now one of the **fastest-growing HVAC contracting companies in South India**.
+                </p>
+                <p class="mb-6 text-gray-600 slide-up" style="transition-delay: 0.2s;">
+                    As a company, we have emerged from being HVAC engineers to a **turnkey HVAC contracting organization**. Led by a team with strong technical expertise, we provide solutions from concept to commissioning in critical HVAC projects across key sectors.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 slide-up" style="transition-delay: 0.3s;">
+                    <div class="flex items-center text-gray-800">
+                        <i data-feather="check-circle" class="text-red-600 mr-3 w-5 h-5"></i>
+                        <span class="font-medium">Experienced Design Team</span>
+                    </div>
+                    <div class="flex items-center text-gray-800">
+                        <i data-feather="check-circle" class="text-red-600 mr-3 w-5 h-5"></i>
+                        <span class="font-medium">Skilled Project Personnel</span>
+                    </div>
+                    <div class="flex items-center text-gray-800">
+                        <i data-feather="check-circle" class="text-red-600 mr-3 w-5 h-5"></i>
+                        <span class="font-medium">Committed Service Team</span>
+                    </div>
+                    <div class="flex items-center text-gray-800">
+                        <i data-feather="check-circle" class="text-red-600 mr-3 w-5 h-5"></i>
+                        <span class="font-medium">South India Operations</span>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="inline-block mt-8 bg-blue-900 hover:bg-red-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition duration-300 transform hover:scale-105 slide-up" style="transition-delay: 0.4s;">
+                    Learn More About Our Journey
+                </a>
+            </div>
+
+            <div class="order-1 lg:order-2">
+                <img src="images/person-working-building-construction.jpg" alt="HVAC Engineers working on site" class="w-full rounded-xl shadow-2xl slide-up">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-blue-900 mb-4 slide-up">Our Guiding Principles</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto slide-up" style="transition-delay: 0.1s;">The commitment and values that set us apart in the HVAC industry.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-red-600 slide-up" style="transition-delay: 0.2s;">
+                <div class="w-12 h-12 text-red-600 mb-4 mx-auto md:mx-0">
+                    <i data-feather="heart" class="w-full h-full"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-2">Our Philosophy</h3>
+                <p class="text-gray-600">
+                    Our customers are our **number one priority**. We won't be satisfied unless our customers are, too. We build long-term relationships based on trust and quality service.
+                </p>
+            </div>
+            
+            <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-900 slide-up" style="transition-delay: 0.3s;">
+                <div class="w-12 h-12 text-blue-900 mb-4 mx-auto md:mx-0">
+                    <i data-feather="send" class="w-full h-full"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-2">Our Mission</h3>
+                <p class="text-gray-600">
+                    To form enduring relationships by employing the best resources and latest technologies to deliver valued, quality engineering solutions for every project.
+                </p>
+            </div>
+            
+            <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-red-600 slide-up" style="transition-delay: 0.4s;">
+                <div class="w-12 h-12 text-red-600 mb-4 mx-auto md:mx-0">
+                    <i data-feather="eye" class="w-full h-full"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-2">Our Vision</h3>
+                <p class="text-gray-600">
+                    To be the **progressive leader** in the HVAC industry, constantly improving comfort, efficiency, and sustainability to the highest level for all our clients.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <h2 class="text-4xl font-extrabold text-blue-900 mb-4 slide-up">Why Choose <span class="text-red-600">ARS Engineering?</span></h2>
+                <p class="text-xl text-gray-600 mb-8 slide-up" style="transition-delay: 0.1s;">We deliver proven results backed by integrity, expertise, and round-the-clock support.</p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start slide-up" style="transition-delay: 0.2s;">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4 shadow-md">
+                            <i data-feather="check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-900">Affordable & Transparent Pricing</h4>
+                            <p class="text-gray-600">We provide all services at the best market rates with detailed, upfront cost analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start slide-up" style="transition-delay: 0.3s;">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4 shadow-md">
+                            <i data-feather="users" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-900">Professional Project Management</h4>
+                            <p class="text-gray-600">Efficient project management and timely delivery from concept to commissioning.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start slide-up" style="transition-delay: 0.4s;">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4 shadow-md">
+                            <i data-feather="tool" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-900">24/7 Rapid Response Support</h4>
+                            <p class="text-gray-600">Round-the-clock technical support and emergency service ensures minimal business interruption.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <img src="images/about-page.jpg" alt="Team and Service Quality" class="w-full rounded-xl shadow-2xl slide-up">
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    <section class="py-16 bg-red-600">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-4 slide-up">Ready to Start Your Project?</h2>
+                <p class="text-xl text-white/90 mb-8 slide-up">Get a free consultation and quote. Our experts are ready to build your ideal climate control system.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center slide-up">
+                    <a href="contact.html" class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition duration-300 transform hover:scale-105">
+                        Get Free Quote
+                    </a>
+                    <a href="tel:+919035994326" class="bg-transparent hover:bg-white hover:text-red-600 text-white border-2 border-white px-8 py-3 rounded-xl font-medium transition duration-300 transform hover:scale-105">
+                        Call Now: +91 9035994326
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer py-16 bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-1">
+                    <img src="images/logo.png" alt="ARS Engineering Solutions" class="h-12 mb-4 filter brightness-200">
+                    <p class="mb-4 text-sm">ARS Engineering Solutions has a talented group of HVAC technicians capable of handling every aspect of our customers' air-conditioning and refrigeration needs.</p>
+                    <div class="flex gap-4">
+                        <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="text-red-600 hover:text-white transition">
+                            <i data-feather="message-circle" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Quick Links</h5>
+                    <ul class="list-none space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-red-600 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-600 transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-red-600 transition">Services</a></li>
+                        <li><a href="projects.html" class="hover:text-red-600 transition">Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-red-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Core Services</h5>
+                    <ul class="list-none space-y-2 text-sm">
+                        <li><a href="project-sales-and-estimation.html" class="hover:text-red-600 transition">Project Sales & Estimation</a></li>
+                        <li><a href="hvac-design-and-drafting.html" class="hover:text-red-600 transition">HVAC Design & Drafting</a></li>
+                        <li><a href="preventive-maintenance-services.html" class="hover:text-red-600 transition">Preventive Maintenance</a></li>
+                        <li><a href="annual-maintenance-of-hvac-equipment.html" class="hover:text-red-600 transition">Annual Maintenance</a></li>
+                        <li><a href="indoor-air-quality-monitoring.html" class="hover:text-red-600 transition">Air Quality Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Get in Touch</h5>
+                    <div class="space-y-3 text-sm">
+                        <p class="flex items-start">
+                            <i data-feather="phone" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <a href="tel:+919035994326" class="hover:text-red-600 transition">+91 9035994326</a>
+                        </p>
+                        <p class="flex items-start">
+                            <i data-feather="mail" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <a href="mailto:sales@arsenggsolutions.com" class="hover:text-red-600 transition">sales@arsenggsolutions.com</a>
+                        </p>
+                        <p class="flex items-start">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <span>JVN Tower, #21/792, 17 B Main Road, 59th Cross, 5th Block, Rajajinagar, Bangalore - 560010</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-10 border-gray-700">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p class="mb-2 md:mb-0">&copy; 2024 ARS Engineering Solutions. All rights reserved.</p>
+                <p>Designed and Developed by <a href="https://aserzinfotech.in/" target="_blank" class="hover:text-red-600 transition">Aserz Infotech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        // 1. Initialize Feather Icons
+        feather.replace();
+
+        // 2. Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // 3. Mobile Services Dropdown Toggle
+        document.getElementById('services-mobile-toggle').addEventListener('click', function() {
+            const dropdown = document.getElementById('services-mobile-menu');
+            const icon = document.getElementById('services-mobile-icon');
+            dropdown.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        });
+
+        // 4. Intersection Observer for Slide-Up Animation
+        // This is necessary for the CTA section to appear correctly.
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    // We only need to observe until the CTA section is visible
+                    if (entry.target.classList.contains('slide-up')) {
+                         observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

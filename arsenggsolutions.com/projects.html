@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS Engineering Solutions - Our Projects</title>
+    <meta name="description" content="Professional HVAC services in Bangalore. We provide HVAC design, installation, maintenance, and repair services for commercial and residential projects.">
+    <meta name="keywords" content="HVAC, air conditioning, Bangalore, engineering, maintenance, installation, projects">
+    
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-900': '#2E375F', /* Primary Color */
+                        'red-600': '#F22613',  /* Secondary/Accent Color */
+                        'blue-100': '#E6E8F0', /* Light shade */
+                        'blue-800': '#273153', /* Darker blue */
+                        'gray-900': '#1a1a1a', /* Footer Background */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Ensure project titles and links use the brand colors */
+        .project-card-title a { color: #2E375F; font-weight: bold; font-size: 1.1rem; }
+        .project-card-title a:hover { color: #F22613; }
+        .btn-read-more { color: #F22613; font-weight: bold; }
+        .btn-read-more:hover { color: #2E375F; }
+
+        /* Utility for footer logo */
+        .filter-brightness-200 { filter: brightness(200%); }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    
+    <header>
+        <div class="bg-red-600 text-white py-2">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-sm">Don't wait any longer to get it fixed! 🛠️</p>
+                    <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="flex items-center text-sm hover:text-gray-200">
+                        <i data-feather="message-circle" class="mr-2 w-4 h-4"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white py-4 shadow-md">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <a href="index.html" class="mb-4 md:mb-0">
+                        <img src="./projects_files/logo.png" alt="ARS Engineering Solutions" class="h-14">
+                    </a>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center md:text-right">
+                        <div class="flex items-center justify-center sm:justify-end space-x-2">
+                            <i data-feather="mail" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-500">Mail Us Today</p>
+                                <a href="mailto:sales@arsenggsolutions.com" class="text-sm font-medium hover:text-blue-900 transition">sales@arsenggsolutions.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center sm:justify-end space-x-2">
+                            <i data-feather="map-pin" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-500">Location</p>
+                                <p class="text-sm">Rajaji Nagar, Bangalore</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center sm:justify-end space-x-2">
+                            <i data-feather="phone" class="text-blue-900 flex-shrink-0 w-6 h-6"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-500">Call Us</p>
+                                <a href="tel:+919035994326" class="text-sm font-medium hover:text-blue-900 transition">+91 9035994326</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex justify-between items-center py-3">
+                    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                    
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <a href="https://arsenggsolutions.com/" class="font-medium hover:text-red-600 transition">Home</a>
+                        <a href="https://arsenggsolutions.com/about" class="font-medium hover:text-red-600 transition">About Us</a>
+                        <div class="relative group">
+                            <button class="font-medium hover:text-red-600 transition flex items-center py-2">
+                                Services <i data-feather="chevron-down" class="ml-1 w-4 h-4"></i>
+                            </button>
+                            <div class="absolute left-0 mt-0 w-64 bg-white text-gray-800 shadow-xl rounded-b-lg py-2 hidden group-hover:block z-50">
+                                <a href="https://arsenggsolutions.com/services" class="block px-4 py-2 hover:bg-blue-100 font-bold text-blue-900">All Services</a>
+                                <a href="https://arsenggsolutions.com/service-detail/1/project-sales-and-estimation" class="block px-4 py-2 hover:bg-blue-100">Project Sales and Estimation</a>
+                                <a href="https://arsenggsolutions.com/service-detail/2/hvac-design-and-drafting" class="block px-4 py-2 hover:bg-blue-100">HVAC Design and Drafting</a>
+                                <a href="https://arsenggsolutions.com/service-detail/3/project-planning-and-project-execution-project-management" class="block px-4 py-2 hover:bg-blue-100">Project Management</a>
+                                <a href="https://arsenggsolutions.com/service-detail/4/preventive-maintenance-services" class="block px-4 py-2 hover:bg-blue-100">Preventive Maintenance</a>
+                                <a href="https://arsenggsolutions.com/service-detail/5/annual-maintenance-of-hvac-equipment" class="block px-4 py-2 hover:bg-blue-100">Annual Maintenance</a>
+                                <a href="https://arsenggsolutions.com/service-detail/6/retro-fit-and-refurbishment-projects" class="block px-4 py-2 hover:bg-blue-100">Retro Fit Projects</a>
+                                <a href="https://arsenggsolutions.com/service-detail/7/indoor-air-quality-monitoring" class="block px-4 py-2 hover:bg-blue-100">Air Quality Monitoring</a>
+                                <a href="https://arsenggsolutions.com/service-detail/8/duct-inspection-and-cleaning-services" class="block px-4 py-2 hover:bg-blue-100">Duct Inspection</a>
+                            </div>
+                        </div>
+                        <a href="https://arsenggsolutions.com/projects" class="font-medium hover:text-red-600 transition">Projects</a>
+                        <a href="https://arsenggsolutions.com/project-gallery" class="font-medium hover:text-red-600 transition">Gallery</a>
+                        <a href="https://arsenggsolutions.com/our-clients" class="font-medium hover:text-red-600 transition">Our Clients</a>
+                        <a href="https://arsenggsolutions.com/contact" class="font-medium hover:text-red-600 transition">Contact Us</a>
+                    </div>
+                    
+                    <a href="https://arsenggsolutions.com/enquire-now" class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg font-bold shadow-lg transition duration-300">
+                        Enquire Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="main-content">
+        <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
+            <h1 class="text-3xl text-gray-500">Projects</h1>
+           
+        </div>
+    </section> 
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/fb2dba679cafa840e6a369e9472fc2f9.jpg" alt="DAYANANDA SAGAR UNIVERSITY & HOSPITAL" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/14/dayananda-sagar-university-hospital" class="hover:text-red-600 transition">DAYANANDA SAGAR UNIVERSITY & HOSPITAL</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">TOILET VENTILATION WORKS FOR HOSTEL BUILDING</p>
+                            <a href="https://arsenggsolutions.com/project-detail/14/dayananda-sagar-university-hospital" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/527fef2bc3bfb9209dcd4fc6433931fc.png" alt="Accenture – BDC9" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/13/accenture-bdc9" class="hover:text-red-600 transition">Accenture – BDC9</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">HVAC LOWSIDE WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/13/accenture-bdc9" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/fcd89f35dabc9d49c7b0fd126323cbc8.jpg" alt="VAN GOGH GARDEN" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/12/van-gogh-garden" class="hover:text-red-600 transition">VAN GOGH GARDEN</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">SITC OF BABY CHILLERS AND RELATED WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/12/van-gogh-garden" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/81cbf2dd6fe07c03167ea1f1e001b446.jpg" alt="ALLEGIS - 4TH FLOOR" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/11/allegis---4th-floor" class="hover:text-red-600 transition">ALLEGIS - 4TH FLOOR</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">HVAC LOWSIDE WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/11/allegis---4th-floor" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/245f9f1c7f41e0fb21356652d62748e1.jpg" alt="TEF ROOM - M/s. BOSCH BIDADI" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/10/tef-room---m-s-bosch-bidadi" class="hover:text-red-600 transition">TEF ROOM - M/s. BOSCH BIDADI</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">SITC OF PRECISION AC UNIT & RELATED WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/10/tef-room---m-s-bosch-bidadi" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/bcc1576060686e2bbed3bb1a59e1504d.jpg" alt="Snehadaan Hospital" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/9/snehadaan-hospital" class="hover:text-red-600 transition">Snehadaan Hospital</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">SITC OF DX UNITS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/9/snehadaan-hospital" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/da314bfa3cbe58df1f29f4b58380c30d.jpg" alt="STP VENTILATION WORKS - M/s. HILTON HOTEL" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/8/stp-ventilation-works---m-s-hilton-hotel" class="hover:text-red-600 transition">STP VENTILATION WORKS - M/s. HILTON HOTEL</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">STP VENTILATION RECTIFICATION WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/8/stp-ventilation-works---m-s-hilton-hotel" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/84f70a0eb9f7b65489a1978cc9b8227c.jpg" alt="GYM AREA HVAC WORKS – M/s. HILTON HOTEL" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/7/-gym-area-hvac-works-m-s-hilton-hotel" class="hover:text-red-600 transition">GYM AREA HVAC WORKS – M/s. HILTON HOTEL</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">HVAC WORKS for GYM AREA</p>
+                            <a href="https://arsenggsolutions.com/project-detail/7/-gym-area-hvac-works-m-s-hilton-hotel" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/e427e8207a6d91e65fc70d775efa05cb.jpg" alt="GE INDIA - WHITEFIELD" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/6/ge-india---whitefield" class="hover:text-red-600 transition">GE INDIA - WHITEFIELD</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">REPLACEMENT OF CHILLER HEADER PIPELINE WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/6/ge-india---whitefield" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/c0bf6fd29472b30353b976d500d7ba68.jpg" alt="ALLEGIS - 3RD FLOOR" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/5/allegis---3rd-floor" class="hover:text-red-600 transition">ALLEGIS - 3RD FLOOR</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">LOWSIDE FITOUT WORKS</p>
+                            <a href="https://arsenggsolutions.com/project-detail/5/allegis---3rd-floor" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="h-56 overflow-hidden">
+                            <img src="./projects_files/48062ca737870f6bf1632f3274740f14.jpg" alt="BOSCH ADUGODI 111A" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="project-card-title text-xl mb-2 leading-tight">
+                                <a href="https://arsenggsolutions.com/project-detail/4/bosch-adugodi-111a" class="hover:text-red-600 transition">BOSCH ADUGODI 111A</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">FITOUT WORKS RELATED TO HVAC</p>
+                            <a href="https://arsenggsolutions.com/project-detail/4/bosch-adugodi-111a" class="inline-flex items-center btn-read-more transition">
+                                Read more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section> 
+    </div> 
+    
+    <section class="py-16 bg-red-600">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-4">Ready to Start Your Project?</h2>
+                <p class="text-xl text-white/90 mb-8">Get a free consultation and quote. Our experts are ready to build your ideal climate control system.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition duration-300 transform hover:scale-105">
+                        Get Free Quote
+                    </a>
+                    <a href="tel:+919035994326" class="bg-transparent hover:bg-white hover:text-red-600 text-white border-2 border-white px-8 py-3 rounded-xl font-medium transition duration-300 transform hover:scale-105">
+                        Call Now: +91 9035994326
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-16 bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-1">
+                    <img src="images/logo.png" alt="ARS Engineering Solutions" class="h-12 mb-4 filter brightness-200">
+                    <p class="mb-4 text-sm">ARS Engineering Solutions has a talented group of HVAC technicians capable of handling every aspect of our customers' air-conditioning and refrigeration needs.</p>
+                    <div class="flex gap-4">
+                        <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="text-red-600 hover:text-white transition">
+                            <i data-feather="message-circle" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Quick Links</h5>
+                    <ul class="list-none space-y-2 text-sm">
+                        <li><a href="https://arsenggsolutions.com/" class="hover:text-red-600 transition">Home</a></li>
+                        <li><a href="https://arsenggsolutions.com/about" class="hover:text-red-600 transition">About Us</a></li>
+                        <li><a href="https://arsenggsolutions.com/services" class="hover:text-red-600 transition">Services</a></li>
+                        <li><a href="https://arsenggsolutions.com/projects" class="hover:text-red-600 transition">Projects</a></li>
+                        <li><a href="https://arsenggsolutions.com/contact" class="hover:text-red-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Core Services</h5>
+                    <ul class="list-none space-y-2 text-sm">
+                        <li><a href="https://arsenggsolutions.com/service-detail/1/project-sales-and-estimation" class="hover:text-red-600 transition">Project Sales & Estimation</a></li>
+                        <li><a href="https://arsenggsolutions.com/service-detail/2/hvac-design-and-drafting" class="hover:text-red-600 transition">HVAC Design & Drafting</a></li>
+                        <li><a href="https://arsenggsolutions.com/service-detail/4/preventive-maintenance-services" class="hover:text-red-600 transition">Preventive Maintenance</a></li>
+                        <li><a href="https://arsenggsolutions.com/service-detail/5/annual-maintenance-of-hvac-equipment" class="hover:text-red-600 transition">Annual Maintenance</a></li>
+                        <li><a href="https://arsenggsolutions.com/service-detail/7/indoor-air-quality-monitoring" class="hover:text-red-600 transition">Air Quality Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <h5 class="text-white text-lg font-bold mb-4 border-b-2 border-red-600/50 pb-2">Get in Touch</h5>
+                    <div class="space-y-3 text-sm">
+                        <p class="flex items-start">
+                            <i data-feather="phone" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <a href="tel:+919035994326" class="hover:text-red-600 transition">+91 9035994326</a>
+                        </p>
+                        <p class="flex items-start">
+                            <i data-feather="mail" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <a href="mailto:sales@arsenggsolutions.com" class="hover:text-red-600 transition">sales@arsenggsolutions.com</a>
+                        </p>
+                        <p class="flex items-start">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-3 mt-1 text-red-600"></i>
+                            <span>JVN Tower, #21/792, 17 B Main Road, 59th Cross, 5th Block, Rajajinagar, Bangalore - 560010</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-10 border-gray-700">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p class="mb-2 md:mb-0">&copy; 2024 ARS Engineering Solutions. All rights reserved.</p>
+                <p>Designed and Developed by <a href="https://aserzinfotech.in/" target="_blank" class="hover:text-red-600 transition">Aserz Infotech</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 1. Initialize Feather Icons
+        feather.replace();
+
+        // 2. Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // 3. Mobile Services Dropdown Toggle
+        document.getElementById('services-mobile-toggle').addEventListener('click', function() {
+            const dropdown = document.getElementById('services-mobile-menu');
+            const icon = document.getElementById('services-mobile-icon');
+            dropdown.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        });
+    </script>
+</body>
+</html>

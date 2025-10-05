@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquire Now - ARS Engineering Solutions</title>
+    <meta name="description" content="Get a free quote for your HVAC project. Fill out our enquiry form and our experts will contact you with detailed project estimation and recommendations.">
+    <meta name="keywords" content="HVAC quote, HVAC enquiry, project estimation, free consultation, HVAC services Bangalore">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style-main.css" rel="stylesheet">
+    <link href="css/colors/theme-skin-color-set-1.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(46, 55, 95, 0.8), rgba(46, 55, 95, 0.8)), url('images/bg/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 80px;
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: #2E375F;
+            border-color: #2E375F;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d233d;
+            border-color: #1d233d;
+        }
+        
+        .btn-secondary {
+            background-color: #F22613;
+            border-color: #F22613;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d41e10;
+            border-color: #d41e10;
+        }
+        
+        .text-primary {
+            color: #2E375F !important;
+        }
+        
+        .text-secondary {
+            color: #F22613 !important;
+        }
+        
+        .bg-primary {
+            background-color: #2E375F !important;
+        }
+        
+        .bg-secondary {
+            background-color: #F22613 !important;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .enquiry-form {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .form-control:focus {
+            border-color: #2E375F;
+            box-shadow: 0 0 0 0.2rem rgba(46, 55, 95, 0.25);
+        }
+        
+        .form-select:focus {
+            border-color: #2E375F;
+            box-shadow: 0 0 0 0.2rem rgba(46, 55, 95, 0.25);
+        }
+        
+        .footer {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #F22613;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .benefit-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: #2E375F;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Top Bar -->
+        <div class="bg-secondary py-2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="text-white mb-0 fw-bold">Don't wait any longer to get it fixed!</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="text-white">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="bg-light py-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="images/logo.png" alt="ARS Engineering Solutions" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row text-end">
+                            <div class="col-md-4">
+                                <div class="contact-info">
+                                    <i class="fas fa-envelope text-primary me-2"></i>
+                                    <div>
+                                        <small class="text-muted">Mail Us Today</small><br>
+                                        <a href="mailto:sales@arsenggsolutions.com" class="text-decoration-none">sales@arsenggsolutions.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-info">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                    <div>
+                                        <small class="text-muted">Location</small><br>
+                                        <small>Rajaji Nagar, Bangalore</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-info">
+                                    <i class="fas fa-phone text-primary me-2"></i>
+                                    <div>
+                                        <small class="text-muted">Call Us</small><br>
+                                        <a href="tel:+919035994326" class="text-decoration-none">+91 9035994326</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="project-sales-and-estimation.html">Project Sales and Estimation</a></li>
+                                <li><a class="dropdown-item" href="hvac-design-and-drafting.html">HVAC Design and Drafting</a></li>
+                                <li><a class="dropdown-item" href="project-planning-and-project-execution-project-management.html">Project Management</a></li>
+                                <li><a class="dropdown-item" href="preventive-maintenance-services.html">Preventive Maintenance</a></li>
+                                <li><a class="dropdown-item" href="annual-maintenance-of-hvac-equipment.html">Annual Maintenance</a></li>
+                                <li><a class="dropdown-item" href="retro-fit-and-refurbishment-projects.html">Retro Fit Projects</a></li>
+                                <li><a class="dropdown-item" href="indoor-air-quality-monitoring.html">Air Quality Monitoring</a></li>
+                                <li><a class="dropdown-item" href="duct-inspection-and-cleaning-services.html">Duct Inspection</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="project-gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="our-clients.html">Our Clients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="enquire-now.html" class="btn btn-secondary text-white active">Enquire Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Enquire Now</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Enquire Now</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Get Your Free Quote</h2>
+                    <p class="lead text-muted">Fill out the form below and our experts will contact you with a detailed project estimation and recommendations.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="enquiry-form">
+                        <form id="enquiryForm" action="mailto:sales@arsenggsolutions.com" method="post" enctype="text/plain">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="company" class="form-label">Company/Organization</label>
+                                    <input type="text" class="form-control" id="company" name="company">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Project Location <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="location" name="location" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="service" class="form-label">Service Required <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="Project Sales & Estimation">Project Sales & Estimation</option>
+                                        <option value="HVAC Design & Drafting">HVAC Design & Drafting</option>
+                                        <option value="Project Management">Project Management</option>
+                                        <option value="Preventive Maintenance">Preventive Maintenance</option>
+                                        <option value="Annual Maintenance">Annual Maintenance</option>
+                                        <option value="Air Quality Monitoring">Air Quality Monitoring</option>
+                                        <option value="Duct Inspection & Cleaning">Duct Inspection & Cleaning</option>
+                                        <option value="Retro Fit Projects">Retro Fit Projects</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="projectType" class="form-label">Project Type</label>
+                                    <select class="form-select" id="projectType" name="projectType">
+                                        <option value="">Select project type</option>
+                                        <option value="Commercial">Commercial</option>
+                                        <option value="Residential">Residential</option>
+                                        <option value="Industrial">Industrial</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Educational">Educational</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="budget" class="form-label">Approximate Budget</label>
+                                    <select class="form-select" id="budget" name="budget">
+                                        <option value="">Select budget range</option>
+                                        <option value="Under 1 Lakh">Under ₹1 Lakh</option>
+                                        <option value="1-5 Lakhs">₹1-5 Lakhs</option>
+                                        <option value="5-10 Lakhs">₹5-10 Lakhs</option>
+                                        <option value="10-25 Lakhs">₹10-25 Lakhs</option>
+                                        <option value="25-50 Lakhs">₹25-50 Lakhs</option>
+                                        <option value="Above 50 Lakhs">Above ₹50 Lakhs</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="timeline" class="form-label">Project Timeline</label>
+                                    <select class="form-select" id="timeline" name="timeline">
+                                        <option value="">Select timeline</option>
+                                        <option value="ASAP">ASAP</option>
+                                        <option value="Within 1 Month">Within 1 Month</option>
+                                        <option value="1-3 Months">1-3 Months</option>
+                                        <option value="3-6 Months">3-6 Months</option>
+                                        <option value="6+ Months">6+ Months</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="projectDetails" class="form-label">Project Details</label>
+                                    <textarea class="form-control" id="projectDetails" name="projectDetails" rows="4" placeholder="Please provide details about your HVAC project requirements, building specifications, and any specific needs..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">
+                                            I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            I would like to receive updates about new services and offers
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">Submit Enquiry</button>
+                                    <button type="reset" class="btn btn-outline-secondary btn-lg px-5 ms-3">Reset Form</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Why Enquire With Us?</h2>
+                    <p class="lead text-muted">Get the best value for your HVAC project with our expert consultation</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <i class="fas fa-gift"></i>
+                        <h5 class="text-primary">Free Consultation</h5>
+                        <p class="text-muted">Get expert advice and project assessment at no cost to you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <i class="fas fa-calculator"></i>
+                        <h5 class="text-primary">Detailed Estimation</h5>
+                        <p class="text-muted">Receive comprehensive cost breakdown and project timeline.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h5 class="text-primary">Expert Recommendations</h5>
+                        <p class="text-muted">Get professional suggestions for optimal system design and efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <i class="fas fa-clock"></i>
+                        <h5 class="text-primary">Quick Response</h5>
+                        <p class="text-muted">We respond to all enquiries within 24 hours with detailed information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Need Immediate Assistance?</h2>
+                    <p class="lead text-muted">Contact us directly for urgent enquiries or to speak with our experts</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-phone fa-lg"></i>
+                        </div>
+                        <h5 class="text-primary">Call Us</h5>
+                        <p class="text-muted">Speak directly with our experts</p>
+                        <a href="tel:+919035994326" class="btn btn-outline-primary">+91 9035994326</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </div>
+                        <h5 class="text-primary">WhatsApp</h5>
+                        <p class="text-muted">Quick chat and file sharing</p>
+                        <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="btn btn-outline-primary">WhatsApp Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </div>
+                        <h5 class="text-primary">Email Us</h5>
+                        <p class="text-muted">Send detailed project information</p>
+                        <a href="mailto:sales@arsenggsolutions.com" class="btn btn-outline-primary">Send Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="images/logo.png" alt="ARS Engineering Solutions" class="mb-3" style="height: 50px;">
+                    <p class="mb-4">Over the past years ARS Engineering Solutions has strategically assembled a talented group of HVAC technicians capable of handling each and every aspect of our customers' air-conditioning and refrigeration needs.</p>
+                    <div class="d-flex gap-3">
+                        <a href="https://api.whatsapp.com/send?phone=917676089838&text=Hi" target="_blank" class="text-white">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="projects.html">Projects</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="project-sales-and-estimation.html">Project Sales & Estimation</a></li>
+                        <li class="mb-2"><a href="hvac-design-and-drafting.html">HVAC Design & Drafting</a></li>
+                        <li class="mb-2"><a href="preventive-maintenance-services.html">Preventive Maintenance</a></li>
+                        <li class="mb-2"><a href="annual-maintenance-of-hvac-equipment.html">Annual Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-3">Contact Info</h5>
+                    <div class="contact-info">
+                        <p class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+919035994326">+91 9035994326</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:sales@arsenggsolutions.com">sales@arsenggsolutions.com</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            JVN Tower, #21/792, 17 B Main Road,<br>
+                            59th Cross, 5th Block, Rajajinagar<br>
+                            Bangalore - 560010
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 ARS Engineering Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">Site created by <a href="https://aserzinfotech.in/" target="_blank">Aserz Infotech</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Enquiry form handling
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const company = formData.get('company');
+            const location = formData.get('location');
+            const service = formData.get('service');
+            const projectType = formData.get('projectType');
+            const budget = formData.get('budget');
+            const timeline = formData.get('timeline');
+            const projectDetails = formData.get('projectDetails');
+            
+            // Create email body
+            const emailBody = `HVAC Project Enquiry
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Company: ${company}
+Project Location: ${location}
+Service Required: ${service}
+Project Type: ${projectType}
+Budget: ${budget}
+Timeline: ${timeline}
+
+Project Details:
+${projectDetails}
+
+This enquiry was submitted through the ARS Engineering Solutions website.`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:sales@arsenggsolutions.com?subject=HVAC Project Enquiry - ${name}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your enquiry! Your email client will open to send the message. We will contact you within 24 hours.');
+        });
+    </script>
+</body>
+</html>
